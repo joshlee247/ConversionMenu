@@ -1,9 +1,9 @@
 /*
-program name: Mortgage Calculator.java
+program name: ConversionMenu.java
 programmer: Josh Lee
-date: 11/9/20
-version: 2.0
-Creates a program in Java Swing to compute your monthly mortgage with a seamless UI.
+date: 11/19/20
+version: 1.4
+Creates a program in Java Swing to convert USD to pesos, euros, or yen.
 */
 
 import javax.swing.*;
@@ -20,7 +20,7 @@ import java.awt.event.*;
       cFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
       //sets size of cFrame window
-      cFrame.setSize(600,1000);
+      cFrame.setSize(300,150);
 
       //aligns all components to center
       //cFrame.setLayout(new FlowLayout(FlowLayout.LEFT, 3, 10));

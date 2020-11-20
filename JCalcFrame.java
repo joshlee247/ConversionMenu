@@ -31,11 +31,13 @@ public class JCalcFrame extends JFrame implements ActionListener
     Container con = getContentPane();
     con.setLayout(flow);
 
+    //organizes frame into 3 rows
     Box outer = Box.createVerticalBox();
     Box row1 = Box.createHorizontalBox();
     Box row2 = Box.createHorizontalBox();
     Box row3 = Box.createHorizontalBox();
 
+    //adds all components to their respective area
     con.add(menu);
     setJMenuBar(menu);
 
@@ -52,6 +54,8 @@ public class JCalcFrame extends JFrame implements ActionListener
     
     outer.add(row1);
     outer.add(row2);
+
+    row3.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
     outer.add(row3);
 
     row1.add(amount);
@@ -67,7 +71,10 @@ public class JCalcFrame extends JFrame implements ActionListener
   }
   public void actionPerformed(ActionEvent e)
   {
+    //gets button clicked
     Object source = e.getSource();
+
+    //rounds decimals to 2 places for cents
     String pattern = "###,###.##";
     DecimalFormat df = new DecimalFormat(pattern);
 
@@ -75,6 +82,7 @@ public class JCalcFrame extends JFrame implements ActionListener
     double usd = Double.parseDouble(input);
     String output = "";
 
+    //changes the top label based on how many dollars inputted
     amount.setText(input + " United States Dollars equals");
 
     //peso button
@@ -94,7 +102,7 @@ public class JCalcFrame extends JFrame implements ActionListener
     //business button
     else if(source == yen)
     {
-      //convert to yen (1 -> 103.86)
+      //convert to yen (1 -> 103.87)
       double convertedYen = usd * 103.87;
       output = df.format(convertedYen) + " Yen";
     }
