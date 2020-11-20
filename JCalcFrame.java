@@ -37,6 +37,8 @@ public class JCalcFrame extends JFrame implements ActionListener
     Box row3 = Box.createHorizontalBox();
 
     con.add(menu);
+    setJMenuBar(menu);
+
     menu.add(conversion);
     menu.add(exit);
 
@@ -53,6 +55,8 @@ public class JCalcFrame extends JFrame implements ActionListener
     outer.add(row3);
 
     row1.add(amount);
+
+    convertedMoney.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
     row2.add(convertedMoney);
     row3.add(tf);
     row3.add(dollarLabel);
@@ -70,6 +74,8 @@ public class JCalcFrame extends JFrame implements ActionListener
     String input = tf.getText();
     double usd = Double.parseDouble(input);
     String output = "";
+
+    amount.setText(input + " United States Dollars equals");
 
     //peso button
     if(source == peso)
